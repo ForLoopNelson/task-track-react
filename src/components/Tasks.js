@@ -1,32 +1,17 @@
-const tasks = [
-  {
-    id: 1,
-    text: "Get your shit together",
-    other: "no-show",
-    day: "monday",
-    reminder: true,
-  },
-  {
-    text: "Smile at your reflection",
-    day: "Wednesday",
-    reminder: false,
-    id: 3,
-  },
-  {
-    text: "Touch Grass",
-    day: "Thursday",
-    reminder: true,
-    id: 4,
-  },
-]
+import Task from "./Task"
 
-const Tasks = () => {
+const Tasks = ({ tasks, onDelete, onToggle }) => {
   return (
-    <>
+    <div>
       {tasks.map((task) => (
-        <h3>{task.text}</h3>
+        <Task
+          key={task.id}
+          task={task}
+          onDelete={onDelete}
+          onToggle={onToggle}
+        />
       ))}
-    </>
+    </div>
   )
 }
 
